@@ -7,13 +7,66 @@
 
 import Foundation
 
-struct Feed {}
+struct FeedItem {}
 
-class APIClient {
-    static let instance = APIClient()
-    private init() {}
+class FeedLoaderViewController {
+    
+    let loader: FeedLoader
+    
+    init(loader: FeedLoader) {
+        self.loader = loader
+    }
+    
+    func load() {
+        loader.loadFeed(completion: {
+            items in
+            
+        })
+    }
 }
 
-let client = APIClient.instance
+struct Reachability {
+    var isReachable: Bool
+}
+
+class RemoteFeedLoaderWithLocalFallback: FeedLoader {
+    let local: LocalFeedLoader
+    let remote: RemoteFeedLoader
+    let reachability: Reachability = Reachability(isReachable: true)
+    
+    init(local: LocalFeedLoader, remote: RemoteFeedLoader) {
+        self.local = local
+        self.remote = remote
+    }
+    
+    func loadFeed(completion: @escaping ([FeedItem]) -> Void) {
+        if (reachability.isReachable) {
+            remote.loadFeed {
+                items in
+                completion(items)
+            }
+        } else {
+            local.loadFeed {
+                items in
+                completion(items)
+            }
+        }
+    }
+    
+}
+
+class LocalFeedLoader: FeedLoader {
+    func loadFeed(completion: @escaping ([FeedItem]) -> Void) {
+        completion([FeedItem()])
+    }
+}
+
+class RemoteFeedLoader: FeedLoader {
+    func loadFeed(completion: @escaping ([FeedItem]) -> Void) {
+        completion([])
+    }
+}
+
+
 
 

@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		823272532D5CB71C000402A5 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823272522D5CB71C000402A5 /* FeedLoader.swift */; };
 		8265961B2D5BCA280021FA4E /* LeadEssentials.h in Headers */ = {isa = PBXBuildFile; fileRef = 8265961A2D5BCA280021FA4E /* LeadEssentials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		826596222D5BCA630021FA4E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826596212D5BCA630021FA4E /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		823272522D5CB71C000402A5 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		826596172D5BCA280021FA4E /* LeadEssentials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadEssentials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8265961A2D5BCA280021FA4E /* LeadEssentials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadEssentials.h; sourceTree = "<group>"; };
 		826596212D5BCA630021FA4E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			children = (
 				8265961A2D5BCA280021FA4E /* LeadEssentials.h */,
 				826596212D5BCA630021FA4E /* APIClient.swift */,
+				823272522D5CB71C000402A5 /* FeedLoader.swift */,
 			);
 			path = LeadEssentials;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823272532D5CB71C000402A5 /* FeedLoader.swift in Sources */,
 				826596222D5BCA630021FA4E /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
