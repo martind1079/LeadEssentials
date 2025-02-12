@@ -7,6 +7,8 @@
 
 import Foundation
 
+struct Feed {}
+
 class APIClient {
     static let instance = APIClient()
     private init() {}
